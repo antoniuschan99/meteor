@@ -2,7 +2,7 @@ Template.headline.release = function () {
   return Meteor.release || "(checkout)";
 };
 
-Meteor.startup(function () {
+Template.nav.rendered = function () {
   // XXX this is broken by the new multi-page layout.  Also, it was
   // broken before the multi-page layout because it had illegible
   // colors. Just turn it off for now. We'll fix it and turn it on
@@ -81,7 +81,7 @@ Meteor.startup(function () {
 
   // Make external links open in a new tab.
   $('a:not([href^="#"])').attr('target', '_blank');
-});
+};
 
 var toc = [
   {name: "Meteor " + Template.headline.release(), id: "top"}, [
